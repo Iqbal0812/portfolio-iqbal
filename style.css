@@ -1,0 +1,483 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #0b1120;
+    --panel: #131d31;
+    --text: #f4f7ff;
+    --muted: #a6b1c7;
+    --blue: #83aaff;
+    --cyan: #73e0d0;
+    --line: rgba(180, 198, 230, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Manrope', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    min-height: 78px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.logo span,
+h1 span {
+    color: var(--cyan);
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    color: var(--muted);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--text);
+    background: rgba(255,255,255,0.08);
+}
+
+.hero {
+    width: 84%;
+    max-width: 1150px;
+    min-height: 570px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 0;
+}
+
+.subtitle {
+    color: var(--cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 5vw, 4.3rem);
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.description {
+    max-width: 600px;
+    color: var(--muted);
+    margin-top: 22px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: linear-gradient(120deg, var(--blue), #b4a4ff);
+    color: #0b1120;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+}
+
+.hero-card {
+    text-align: center;
+    padding: 35px 20px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: float 5s ease-in-out infinite;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 22px;
+    border-radius: 35px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--blue), #b4a4ff, var(--cyan));
+    color: var(--bg);
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+.hero-card h2 {
+    font-size: 1.1rem;
+}
+
+.hero-card p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    background: rgba(115,224,208,0.1);
+    color: var(--cyan);
+    font-size: 0.75rem;
+}
+
+.section,
+.page {
+    width: 84%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 50px 0 80px;
+}
+
+.section h2,
+.content-box h2,
+.contact-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    padding: 25px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.card:hover,
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--cyan);
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: rgba(131,170,255,0.12);
+    color: var(--cyan);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p,
+.content-box p,
+.project-info > p:not(.project-date) {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+}
+
+/* Halaman Tentang dan Proyek */
+
+.page {
+    padding-top: 65px;
+}
+
+.page-heading {
+    margin-bottom: 40px;
+}
+
+.page-heading h1 {
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+}
+
+.page-heading > p:last-child {
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+.content-box,
+.contact-box {
+    padding: 28px;
+    margin-bottom: 22px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+}
+
+.content-box p + p {
+    margin-top: 12px;
+}
+
+.timeline-item {
+    padding: 15px 0 15px 20px;
+    margin-left: 5px;
+    border-left: 2px solid var(--cyan);
+}
+
+.timeline-item span,
+.project-date {
+    color: var(--cyan);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.timeline-item h3 {
+    margin-top: 5px;
+}
+
+.skills,
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills span,
+.tags span {
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.03);
+    padding: 7px 12px;
+    border-radius: 25px;
+    color: #cbd5e8;
+    font-size: 0.78rem;
+}
+
+/* Kartu proyek */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-visual {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    background: linear-gradient(135deg, #203a60, #342c5c);
+}
+
+.project-visual > span {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #d9e3ff;
+}
+
+.visual-icon {
+    align-self: center;
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.75);
+    animation: float 4s ease-in-out infinite;
+}
+
+.film-visual {
+    background: linear-gradient(135deg, #593b5b, #243e5d);
+}
+
+.school-visual {
+    background: linear-gradient(135deg, #234e55, #28355e);
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-info h2 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.tags {
+    margin-top: 18px;
+}
+
+/* Halaman Kontak */
+
+.contact-description {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    margin-top: 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    border-color: var(--cyan);
+}
+
+.contact-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(131,170,255,0.12);
+    color: var(--cyan);
+}
+
+.contact-item small {
+    display: block;
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+.contact-item strong {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.arrow {
+    margin-left: auto;
+    color: var(--cyan);
+}
+
+/* Animasi */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+/* Tampilan HP */
+
+@media (max-width: 760px) {
+    header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    nav a {
+        padding: 7px 9px;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 50px 0;
+    }
+
+    .hero-card {
+        max-width: 350px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .section,
+    .page {
+        width: 88%;
+    }
+
+    .card-container,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
